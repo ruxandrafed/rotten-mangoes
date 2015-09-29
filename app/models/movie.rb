@@ -34,4 +34,6 @@ class Movie < ActiveRecord::Base
     end
   end
 
+  mount_uploader :poster_image_url, MoviePosterUploader
+
 end
