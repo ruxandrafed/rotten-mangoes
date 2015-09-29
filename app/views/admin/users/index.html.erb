@@ -1,7 +1,23 @@
 <h1>Current users</h1>
-<% @users.each do |user| %>
-  <h2><%= link_to user.full_name, users_path(user) %></h2>
-  <p>Email: <%= user.email %></p>
-  <p>Created on: <%= user.created_at %></p>
-  <hr>
-<% end %>
+<table>
+  <col width="130">
+  <col width="200">
+  <col width="130">
+  <col width="130">
+  <tr>
+    <th align="left">User name</th>
+    <th align="left">Email</th>
+    <th align="left">Created on</th>
+    <th align="left">Updated on</th>
+  </tr>
+  <% @users.each do |user| %>
+  <tr>
+    <td><%= link_to user.full_name, users_path(user) %></td>
+    <td><%= user.email %></td>
+    <td><%= formatted_date(user.created_at) %></td>
+    <td><%= formatted_date(user.updated_at) %></td>
+  </tr>
+  <% end %>
+</table>
+<%= paginate @users %>
+
