@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to movies_path
+      redirect_to movies_path, notice: "Welcome back, #{user.firstname}!"
     else
       render :new
     end
