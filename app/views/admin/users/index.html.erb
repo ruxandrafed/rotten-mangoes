@@ -1,3 +1,5 @@
+<%= link_to "Add a new user!", new_admin_user_path %>
+
 <h1>Current users</h1>
 <table>
   <col width="130">
@@ -9,6 +11,7 @@
     <th align="left">Email</th>
     <th align="left">Created on</th>
     <th align="left">Updated on</th>
+    <th align="left">Swtich to user mode</th>
   </tr>
   <% @users.each do |user| %>
   <tr>
@@ -16,6 +19,7 @@
     <td><%= user.email %></td>
     <td><%= formatted_date(user.created_at) %></td>
     <td><%= formatted_date(user.updated_at) %></td>
+    <td><%= link_to 'Switch to user mode', impersonate_admin_session_path(user) %></td>
   </tr>
   <% end %>
 </table>

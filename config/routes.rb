@@ -13,11 +13,19 @@ RottenMangoes::Application.routes.draw do
   end
 
   resources :users, only: [:new, :create]
+
   resources :sessions, only: [:new, :create, :destroy]
 
   namespace :admin do
     resources :users
-    resources :reviews, only: [:destroy]
+    resources :sessions do
+      member do
+        get 'impersonate'
+      end
+      member do
+        get 'back_to_admin'
+      end
+    end
   end
 
 
