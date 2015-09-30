@@ -2,6 +2,7 @@ class MoviesController < ApplicationController
 
   def index
     @movies = Movie.all
+    @movies = Movie.search(params) if params[:commit].present?
   end
 
   def show
