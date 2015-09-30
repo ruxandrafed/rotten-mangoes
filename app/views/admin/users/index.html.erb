@@ -12,7 +12,7 @@
   </tr>
   <% @users.each do |user| %>
   <tr>
-    <td><%= link_to user.full_name, users_path(user) %></td>
+    <td><%= link_to user.full_name, admin_user_path(user) %></td>
     <td><%= user.email %></td>
     <td><%= formatted_date(user.created_at) %></td>
     <td><%= formatted_date(user.updated_at) %></td>
