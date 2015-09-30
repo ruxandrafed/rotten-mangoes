@@ -7,7 +7,7 @@
 
 <hr>
 
-<% if @movies %>
+<% if !@movies.empty? %>
   <% @movies.each do |movie| %>
     <%= link_to image_tag(movie.poster_image_url.thumb.to_s), movie_path(movie) %>
     <h2><%= link_to movie.title, movie_path(movie) %></h2>

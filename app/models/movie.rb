@@ -1,5 +1,10 @@
 class Movie < ActiveRecord::Base
 
+  scope :with_title, -> (title) { where("title LIKE ?", "%#{title}%") }
+  scope :with_director, -> (director) { where("director like ?", "%#{director}%") }
+  scope :under_x_min, -> (max_limit) { where("runtime_in_minutes < ?", max_limit) }
+  scope :over_x_min, -> (min_limit) { where("runtime_in_minutes >= ?", min_limit) }
+
   has_many :reviews
 
   validates :title,
@@ -24,20 +29,6 @@ class Movie < ActiveRecord::Base
 
   def review_average
     reviews.size ? reviews.sum(:rating_out_of_ten)/reviews.size : "-"
-  end
-
-  class << self
-
-    def search(params)
-      @movies = Movie.all
-      @movies = @movies.where("title like ?", "%#{params[:title]}%") if params[:title].present?
-      @movies = @movies.where("director like ?", "%#{params[:director]}%") if params[:director].present?
-      @movies = @movies.where("runtime_in_minutes < ?", 90) if params[:duration] == "2"
-      @movies = @movies.where("runtime_in_minutes BETWEEN ? AND ?", 90, 120) if params[:duration] == "3"
-      @movies = @movies.where("runtime_in_minutes > ?", 120) if params[:duration] == "4"
-      @movies
-    end
-
   end
 
   protected

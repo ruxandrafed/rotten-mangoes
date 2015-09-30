@@ -1,8 +1,12 @@
 class MoviesController < ApplicationController
 
   def index
-    @movies = Movie.all
-    @movies = Movie.search(params) if params[:commit].present?
+    @movies = Movie.where(nil)
+    @movies = @movies.with_title(params[:title]) if params[:title].present?
+    @movies = @movies.with_director(params[:director]) if params[:director].present?
+    @movies = @movies.under_x_min(90) if params[:duration] == "2"
+    @movies = @movies.over_x_min(90).under_x_min(120) if params[:duration] == "3"
+    @movies = @movies.over_x_min(120) if params[:duration] == "4"
   end
 
   def show
