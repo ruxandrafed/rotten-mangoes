@@ -17,6 +17,7 @@ RottenMangoes::Application.routes.draw do
 
   namespace :admin do
     resources :users
+    resources :reviews, only: [:destroy]
   end
 
 
