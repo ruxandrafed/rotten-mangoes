@@ -1,9 +1,16 @@
-<h1>Rotten Mangoes</h1>
-<%= render 'layouts/search_form_v2' %><br>
-<%= link_to "Submit a movie!", new_movie_path %><hr>
-
-<% if !@movies.empty? %>
-  <%= render @movies %>
-<% else %>
-  <h4>No movie matches your criteria.</h4>
-<% end %>
+<!-- Begin page content -->
+<div class="container">
+  <div class="page-header">
+    <h1>All movies:</h1>
+  </div>
+  <p class="lead">Listing of all movies currently in the database.</p>
+  <% if !@movies.empty? %>
+  <div class="container">
+    <%= render @movies %>
+  </div>
+  <% else %>
+  <div class="container">
+    <h4>No movie matches your criteria.</h4>
+  </div>
+  <% end %>
+</div>

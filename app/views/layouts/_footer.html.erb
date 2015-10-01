@@ -1,18 +1,20 @@
-<footer>
-  <hr>
-  <small>
-    <% if current_user %>
-      <% if session[:admin_user_id] %>
-        <%= link_to "Switch back", back_to_admin_admin_session_path(current_user) %>
-      <% end %>
-      <% if admin? %>
-        Signed in as admin <%= current_user.full_name %> (<%= link_to "Log out", session_path("current"), method: :delete %>)
-        <%= link_to "See all users", admin_users_path %>
+<footer class="footer">
+  <div class="container">
+    <hr>
+    <small>
+      <% if current_user %>
+        <% if session[:admin_user_id] %>
+          <%= link_to "Switch back", back_to_admin_admin_session_path(current_user) %>
+        <% end %>
+        <% if admin? %>
+          Signed in as admin <%= current_user.full_name %> (<%= link_to "Log out", session_path("current"), method: :delete %>)
+          <%= link_to "See all users", admin_users_path %>
+        <% else %>
+          Signed in as <%= current_user.full_name %> (<%= link_to "Log out", session_path("current"), method: :delete %>)
+        <% end %>
       <% else %>
-        Signed in as <%= current_user.full_name %> (<%= link_to "Log out", session_path("current"), method: :delete %>)
+        <%= link_to "Log In", new_session_path %> | <%= link_to "Sign Up", new_user_path %>
       <% end %>
-    <% else %>
-      <%= link_to "Log In", new_session_path %> | <%= link_to "Sign Up", new_user_path %>
-    <% end %>
-  </small>
+    </small>
+  </div>
 </footer>

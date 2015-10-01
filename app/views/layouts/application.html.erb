@@ -1,12 +1,54 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>RottenMangoes</title>
+  <title>Rotten Mangoes</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav class="navbar navbar-default navbar-static-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Rotten Mangoes</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/">Home</a></li>
+            <li><%= link_to "All movies", movies_path %></li>
+            <li><%= link_to "Submit a movie", new_movie_path %></li>
+            <% if current_user %>
+              <li><%= link_to "Your profile", user_path(current_user) %></li>
+            <% end %>
+            <% if !current_user %>
+              <li><%= link_to "Log In", new_session_path %></li>
+              <li><%= link_to "Sign Up", new_user_path %></li>
+            <% else %>
+              <li><%= link_to "Log out", session_path("current"), method: :delete %></li>
+            <% end %>
+            <!-- <li><a href="#contact">Contact</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li> -->
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <form class="navbar-form navbar-right" role="search">
+              <%= render 'layouts/search_form_v2' %>
+            </form>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
   <% flash.each do |key, value| %>
     <%= content_tag(:div, value) %>
   <% end %>

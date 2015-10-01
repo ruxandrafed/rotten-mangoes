@@ -1,5 +1,12 @@
-<%= link_to image_tag(movie.poster_image_url.thumb.to_s), movie_path(movie) %>
-<h2><%= link_to movie.title, movie_path(movie) %></h2>
-<h3><%= formatted_date(movie.release_date) %></h3>
-<h4>Dir. <%= movie.director %> | <%= movie.runtime_in_minutes %> minutes</h4>
-<p><%= movie.description %></p><hr>
+<div class="media">
+  <div class="media-left">
+    <%= link_to image_tag(movie.poster_image_url.thumb.to_s), movie_path(movie), :class => "media-object" %>
+  </div>
+  <div class="media-body">
+    <%= link_to movie.title, movie_path(movie), :class => "media-heading" %>
+    <p>Release date: <%= formatted_date(movie.release_date) %><br>
+    Director: <%= movie.director %><br>
+    Runtime: <%= movie.runtime_in_minutes %> minutes<br>
+    Description: <%= movie.description %></p>
+  </div>
+</div>
