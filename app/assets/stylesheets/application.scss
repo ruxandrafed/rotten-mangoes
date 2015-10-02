@@ -1,29 +1,6 @@
+//= require homepage
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,300italic,300,400italic,500,500italic,700,700italic);
-
-body {
-  font-family: 'Ubuntu', sans-serif;
-}
-
-.glyphicon-facetime-video {
-    margin-top: 30px;
-    font-size: 170px;
-    color: #337AB7;
-    float: right;
-}
-
-.navbar {
-  margin-bottom: 0px;
-}
-
-.jumbotron {
-  background-color: #FFFFC2;
-  margin-bottom: 30px
-}
-
-.movie-thumb {
-  margin-top: 5px;
-  margin-right: 5px;
-}
