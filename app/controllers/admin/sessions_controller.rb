@@ -10,7 +10,7 @@ class Admin::SessionsController < ApplicationController
   def back_to_admin
     session[:user_id] = session[:admin_user_id]
     session[:admin_user_id] = nil
-    redirect_to admin_users_path, notice: 'Back to admin role.'
+    redirect_to admin_users_path, notice: "Back to your admin account, #{current_user.firstname}."
 
   end
 

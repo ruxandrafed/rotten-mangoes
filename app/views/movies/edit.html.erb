@@ -1,4 +1,9 @@
-<%= link_to "Back to this movie", movie_path(@movie) %>
+<div class="container">
+  <% if notice %>
+    <div class="alert alert-success"><%= notice %></div>
+  <% end %>
 
-<h2>Edit this movie.</h2>
+<h2>Edit movie: <%= link_to "#{@movie.title}", movie_path(@movie) %> </h2>
 <%= render 'form' %>
+
+</div>

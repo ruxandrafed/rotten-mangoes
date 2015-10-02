@@ -40,18 +40,21 @@
               </ul>
             </li> -->
           </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <form class="navbar-form navbar-right" role="search">
-              <%= render 'layouts/search_form_v2' %>
-            </form>
-          </ul>
+          <% if request.fullpath == '/movies' || request.fullpath == '/' || request.fullpath == '' %>
+            <ul class="nav navbar-nav navbar-right">
+              <form class="navbar-form navbar-right" role="search">
+                <%= render 'layouts/search_form_v2' %>
+              </form>
+            </ul>
+          <% end %>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
+<!--
   <% flash.each do |key, value| %>
     <%= content_tag(:div, value) %>
-  <% end %>
+  <% end %> -->
 
 <%= yield %>
 

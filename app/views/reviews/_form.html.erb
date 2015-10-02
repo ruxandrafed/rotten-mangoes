@@ -1,0 +1,36 @@
+<%= form_for([@movie, @review]) do |f| %>
+  <% if @review.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+      <%= pluralize(@review.errors.count, "error") %> prevented the review from being saved:
+    </div>
+    <div class="container">
+      <ul class="list-group">
+        <% @review.errors.full_messages.each do |msg| %>
+          <li class="list-group item"><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
+
+
+<div class="row">
+  <div class="col-lg-4">
+    <div class="form-group">
+      <div class="input-group"
+        <%= f.label :text, 'What do you think about this movie?' %><br>
+          <%= f.text_area "text", :class => "form-control"%>
+      </div>
+      <br>
+    <div class="form-group">
+      <div class="input-group">
+        <%= f.number_field :rating_out_of_ten, :placeholder => "Rating", :class => "form-control" %>
+        <span class="input-group-addon">out of 10</span>
+    </div>
+
+    </div>
+    <div><%= f.submit "Submit", :class => "btn btn-default" %></div>
+    <% end %>
+    </div>
+  </div>
+</div>
+

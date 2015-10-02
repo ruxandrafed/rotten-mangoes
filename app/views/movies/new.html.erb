@@ -1,4 +1,9 @@
-<%= link_to "Back to all movies", movies_path %>
+<div class="container">
+  <% if notice %>
+    <div class="alert alert-success"><%= notice %></div>
+  <% end %>
 
 <h2>Submit a movie!</h2>
 <%= render 'form' %>
+
+</div>

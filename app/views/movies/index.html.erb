@@ -1,5 +1,19 @@
+<% if request.fullpath == "/" %>
+<!-- Main jumbotron for homepage -->
+<div class="jumbotron">
+  <div class="container">
+    <h1>Hi there!</h1>
+    <p>Join our community of movie lovers and never miss another release. Rotten Mangoes is your best option for accurate information about movies.</p>
+    <p><a class="btn btn-primary btn-lg" href="/movies" role="button">Browse movies &raquo;</a></p>
+  </div>
+</div>
+<% end %>
+
 <!-- Begin page content -->
 <div class="container">
+  <% if notice %>
+    <div class="alert alert-success"><%= notice %></div>
+  <% end %>
   <div class="page-header">
     <h1>All movies:</h1>
   </div>

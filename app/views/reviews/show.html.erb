@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="page-header">
+    <h1><%= @review.user.full_name %>'s review for <%= link_to @movie.title, movie_path(@movie) %>
+    <% if current_user == @review.user %>
+      (<%= link_to "edit", edit_movie_review_path(movie_id: @movie.id, id: @review.id) %>, <%= link_to "delete", movie_review_path(movie_id: @movie.id, id: @review.id), method: :delete, confirm: "You sure?" %>)</h1>
+    <% end %>
+  </div>
+  <div class="row">
+    <div class="col-lg-9">
+      <p class="lead"><%= @review.text %></p>
+      <p class="lead">Posted on: <%= formatted_date(@review.created_at) %></p>
+      <p class="lead">Rating: <%= @review.rating_out_of_ten %> / 10</p>
+    </div>
+  </div>

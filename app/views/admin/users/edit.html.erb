@@ -1,4 +1,13 @@
-<%= link_to "Back to this user", admin_users_path(@user) %>
+<div class="container">
 
-<h2>Edit this user.</h2>
-<%= render 'form' %>
+  <div class="page-header">
+    <h1>Edit this user</h1>
+  </div>
+
+  <%= render 'form' %>
+
+  <hr>
+  <%= link_to "Back to this user", admin_users_path(@user) %>
+
+
+</div>

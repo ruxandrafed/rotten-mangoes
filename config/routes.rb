@@ -9,7 +9,7 @@ RottenMangoes::Application.routes.draw do
   get 'movies', to: 'movies#index'
 
   resources :movies do
-    resources :reviews, only: [:new, :create]
+    resources :reviews
   end
 
   resources :users, only: [:new, :create, :show]
