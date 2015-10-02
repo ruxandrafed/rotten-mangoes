@@ -1,7 +1,13 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css");
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,300italic,300,400italic,500,500italic,700,700italic);
 
 body {
   font-family: 'Ubuntu', sans-serif;
+}
+
+.glyphicon-facetime-video {
+    font-size: 250px;
+    float: right;
 }
