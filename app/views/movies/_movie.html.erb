@@ -1,6 +1,6 @@
 <div class="media">
   <div class="media-left">
-    <%= link_to image_tag(movie.poster_image_url.thumb.to_s), movie_path(movie), :class => "media-object" %>
+    <%= link_to image_tag(movie.poster_image_url.thumb.to_s), movie_path(movie), :class => "media-object movie-thumb" %>
   </div>
   <div class="media-body">
     <%= link_to movie.title, movie_path(movie), :class => "media-heading" %>

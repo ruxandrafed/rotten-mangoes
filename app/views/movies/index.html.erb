@@ -1,4 +1,4 @@
-<% if request.fullpath == "/" %>
+<% if request.fullpath == "/" || request.fullpath == "" %>
 <!-- Main jumbotron for homepage -->
 <div class="jumbotron">
   <div class="container">
@@ -22,9 +22,11 @@
   <% if notice %>
     <div class="alert alert-success"><%= notice %></div>
   <% end %>
+  <% unless request.fullpath == "/" || request.fullpath == "" %>
   <div class="page-header">
     <h1>All movies:</h1>
   </div>
+  <% end %>
   <p class="lead">Listing of all movies currently in the database.</p>
   <% if !@movies.empty? %>
   <div class="container">

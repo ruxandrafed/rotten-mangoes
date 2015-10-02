@@ -48,5 +48,9 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'kaminari'
 # gem 'byebug'
-gem 'pry'
+# gem 'pry'
 gem 'bootstrap-sass'
+
+gem 'rails_12factor', group: :production
+
+ruby "2.2.3"
