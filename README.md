@@ -1,4 +1,4 @@
-== Rotten Mangoes
+Rotten Mangoes
 
 Basic movie information database (Rotten Tomatoes clone).
 
