@@ -1,11 +1,16 @@
 RottenMangoes::Application.routes.draw do
 
+  get 'pages/about'
+
   # get "reviews/new"
   # get "reviews/create"
   # get "sessions/new"
   # get "sessions/create"
   # get "users/new"
   # get "users/create"
+
+  get 'about', to: 'pages#about'
+
   get 'movies', to: 'movies#index'
 
   resources :movies do
