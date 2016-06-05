@@ -46,8 +46,8 @@ gem 'bcrypt'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'carrierwave'
-gem 'rmagick'
+gem 'carrierwave', :github => 'satoruk/carrierwave' , :ref => '43179f94d6a4e62f69e812f5082d6447c9138480'
+gem 'rmagick', require: false
 gem 'kaminari'
 # gem 'byebug'
 # gem 'pry'
