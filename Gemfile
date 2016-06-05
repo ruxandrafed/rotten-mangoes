@@ -53,5 +53,7 @@ gem 'kaminari'
 # gem 'pry'
 gem 'bootstrap-sass'
 
+gem 'pg'
+
 gem 'rails_12factor', group: :production
 
