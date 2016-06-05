@@ -1,10 +1,10 @@
 class Movie < ActiveRecord::Base
 
-  scope :with_title, -> (title) { where("title LIKE ?", "%#{title}%") }
-  scope :with_director, -> (director) { where("director like ?", "%#{director}%") }
+  scope :with_title, -> (title) { where("lower(title) LIKE ?", "%#{title.downcase}%") }
+  scope :with_director, -> (director) { where("lower(director) LIKE ?", "%#{director.downcase}%") }
   scope :under_x_min, -> (max_limit) { where("runtime_in_minutes < ?", max_limit) }
   scope :over_x_min, -> (min_limit) { where("runtime_in_minutes >= ?", min_limit) }
-  scope :with_title_or_director, -> (term) { where("title LIKE ? OR director LIKE ?", "%#{term}%", "%#{term}%") }
+  scope :with_title_or_director, -> (term) { where("lower(title) LIKE ? OR lower(director) LIKE ?", "%#{term.downcase}%", "%#{term.downcase}%") }
 
   has_many :reviews
 
