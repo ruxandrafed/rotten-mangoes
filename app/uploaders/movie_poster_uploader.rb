@@ -3,6 +3,7 @@
 class MoviePosterUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
+<<<<<<< HEAD
   include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
 
