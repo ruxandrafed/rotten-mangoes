@@ -5,6 +5,8 @@ Basic movie information database (Rotten Tomatoes clone).
 Built with Ruby on Rails, HTML, CSS (Bootstrap). 
 Features include: masquerade as user functionality for admins, basic movie search functionality, user profiles.
 
+[Demo]: https://rux-rotten-mangoes.herokuapp.com/
+
 ==================
 
 ## Getting Started
